@@ -1,0 +1,47 @@
+{
+  "name": "surplus-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Surplus: run inference on Surplus models from Claude, Cursor and any MCP client",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "llm",
+    "inference",
+    "surplus",
+    "openai-compatible",
+    "claude",
+    "cursor"
+  ],
+  "homepage": "https://surplusllm.com",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "surplus-mcp": "dist/index.js"
+  },
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && chmod +x dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.7",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}
