@@ -13,7 +13,15 @@
     "cursor"
   ],
   "homepage": "https://surplusllm.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surplusrh/surplus-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/surplusrh/surplus-mcp/issues"
+  },
   "license": "MIT",
+  "mcpName": "io.github.surplusrh/surplus-mcp",
   "type": "module",
   "bin": {
     "surplus-mcp": "dist/index.js"
